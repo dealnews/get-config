@@ -1,6 +1,7 @@
 {
     "name": "dealnews/get-config",
     "type": "library",
+    "license": "BSD-3-Clause",
     "description": "A PHP library for reading settings from environment variables or an ini file.",
     "require-dev": {
         "phpunit/phpunit": "6.5.*"
