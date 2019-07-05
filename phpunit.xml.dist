@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="./tests/bootstrap.php"
+         colors="true">
+    <testsuites>
+        <testsuite>
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory>./src</directory>
+        </whitelist>
+    </filter>
+    <php>
+        <env name="DN_INI_FILE" value="./tests/etc/dealnews_env_file.ini"/>
+        <env name="DEALNEWS_TEST_ENV_VAR" value="foo"/>
+    </php>
+</phpunit>

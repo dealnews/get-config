@@ -1,0 +1,21 @@
+{
+    "name": "dealnews/get-config",
+    "type": "library",
+    "description": "A PHP library for reading settings from environment variables or an ini file.",
+    "require-dev": {
+        "phpunit/phpunit": "6.5.*"
+    },
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4" : {
+            "DealNews\\GetConfig\\" : "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DealNews\\GetConfig\\Tests\\": "tests/"
+        }
+    }
+}

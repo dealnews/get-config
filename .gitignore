@@ -1,0 +1,14 @@
+# IDE project settings
+.project
+.settings
+.idea
+
+# Temporary files
+.DS_Store
+*~
+*.sw[aop]
+
+# Deployment dependencies
+vendor
+composer.lock
+phpunit.xml
