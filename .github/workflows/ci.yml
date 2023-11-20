@@ -28,7 +28,7 @@ jobs:
     - name: PHPUnit tests
       uses: php-actions/phpunit@v3
       with:
-        php_extensions: "pcov"
+        php_extensions: "pcov yaml"
         version: "9.6"
         php_version: ${{ matrix.php-versions }}
 
