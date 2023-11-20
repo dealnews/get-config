@@ -33,4 +33,4 @@ jobs:
         php_version: ${{ matrix.php-versions }}
 
     - name: Run Phan
-      uses: k1LoW/phan-action@latest
+      uses: k1LoW/phan-action@v0
