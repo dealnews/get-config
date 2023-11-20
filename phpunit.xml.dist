@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="./tests/bootstrap.php"
-         colors="true">
-    <testsuites>
-        <testsuite>
-            <directory suffix="Test.php">./tests</directory>
-        </testsuite>
-    </testsuites>
-    <filter>
-        <whitelist>
-            <directory>./src</directory>
-        </whitelist>
-    </filter>
-    <php>
-        <env name="DN_INI_FILE" value="./tests/etc/dealnews_env_file.ini"/>
-        <env name="DEALNEWS_TEST_ENV_VAR" value="foo"/>
-    </php>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="./tests/bootstrap.php" colors="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+  <coverage includeUncoveredFiles="true" processUncoveredFiles="false">
+    <include>
+      <directory suffix=".php">./src</directory>
+    </include>
+    <exclude>
+      <directory suffix=".php">./tests</directory>
+      <directory suffix=".php">./vendor</directory>
+    </exclude>
+    <report>
+      <text outputFile="php://stdout" showUncoveredFiles="true"/>
+    </report>
+  </coverage>
+  <testsuites>
+    <testsuite name="default">
+      <directory>./tests</directory>
+    </testsuite>
+  </testsuites>
+  <groups>
+    <exclude>
+      <group>functional</group>
+    </exclude>
+  </groups>
+  <php>
+    <env name="DN_ETC_DIR" value="./tests/etc"/>
+    <env name="DN_INI_FILE" value="./tests/etc/config_env_file.ini"/>
+    <env name="CONFIG_TEST_ENV_VAR" value="foo"/>
+    <env name="config.test.env.dot.var" value="foobar"/>
+  </php>
 </phpunit>
