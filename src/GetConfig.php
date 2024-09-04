@@ -199,6 +199,12 @@ class GetConfig {
         if (!array_key_exists($var, $this->config)) {
             $value = null;
 
+            $prefix = getenv('GET_CONFIG_PREFIX');
+
+            if (!empty($prefix) && strpos($var, $prefix . '.') === false) {
+                $var = $prefix . '.' . $var;
+            }
+
             $check_vars = [
                 str_replace('.', '_', strtoupper($var)),
                 str_replace('.', '_', strtolower($var)),
