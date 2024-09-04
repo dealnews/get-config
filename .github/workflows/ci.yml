@@ -1,6 +1,6 @@
 name: Testing DealNews\GetConfig
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   test:
@@ -9,12 +9,11 @@ jobs:
 
     strategy:
       matrix:
-        php-versions: ['8.0', '8.1', '8.2']
+        php-versions: ['8.0', '8.1', '8.2', '8.3']
         include:
           - operating-system: 'ubuntu-latest'
             php-versions: '8.0'
             phpunit-versions: 9
-
     steps:
 
     - name: Checkout

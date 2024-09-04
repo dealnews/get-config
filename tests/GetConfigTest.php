@@ -5,6 +5,31 @@ namespace DealNews\GetConfig\Tests;
 use \DealNews\GetConfig\GetConfig;
 
 class GetConfigTest extends \PHPUnit\Framework\TestCase {
+
+    public function testPrefix() {
+        $config = new GetConfig(__DIR__ . '/etc/prefix.ini', __DIR__ . '/etc/config.d/');
+
+        putenv('GET_CONFIG_PREFIX=prefix');
+        putenv('PREFIX_FOO_TEST=BAZ');
+
+        $this->assertEquals(
+            'bar',
+            $config->get('test.foo')
+        );
+
+        $this->assertEquals(
+            '1',
+            $config->get('prefix.test.bar')
+        );
+
+        $this->assertEquals(
+            'BAZ',
+            $config->get('foo.test')
+        );
+
+        putenv('GET_CONFIG_PREFIX=');
+    }
+
     public function testFindFile() {
         $config = new GetConfig(__DIR__ . '/etc/config.ini', __DIR__ . '/etc/config.d/');
 
