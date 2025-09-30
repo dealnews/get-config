@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="./tests/bootstrap.php" colors="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
-  <coverage includeUncoveredFiles="true" processUncoveredFiles="false">
-    <include>
-      <directory suffix=".php">./src</directory>
-    </include>
-    <exclude>
-      <directory suffix=".php">./tests</directory>
-      <directory suffix=".php">./vendor</directory>
-    </exclude>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="./tests/bootstrap.php" colors="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.5/phpunit.xsd" cacheDirectory=".phpunit.cache">
+  <coverage includeUncoveredFiles="true">
     <report>
       <text outputFile="php://stdout" showUncoveredFiles="true"/>
     </report>
@@ -28,4 +21,13 @@
     <env name="CONFIG_TEST_ENV_VAR" value="foo"/>
     <env name="config.test.env.dot.var" value="foobar"/>
   </php>
+  <source>
+    <include>
+      <directory suffix=".php">./src</directory>
+    </include>
+    <exclude>
+      <directory suffix=".php">./tests</directory>
+      <directory suffix=".php">./vendor</directory>
+    </exclude>
+  </source>
 </phpunit>
