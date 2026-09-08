@@ -325,7 +325,7 @@ class GetConfig {
             }
 
             if (!is_array($values)) {
-                clearstatcache();
+                clearstatcache(true);
             }
 
             $tries++;
